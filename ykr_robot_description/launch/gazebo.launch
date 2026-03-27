@@ -1,0 +1,18 @@
+<launch>
+  <!-- 启动 Gazebo 空世界 -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+  </include>
+
+  <!-- 加载你的机器人模型 -->
+  <param name="robot_description" textfile="$(find ykr_robot_description)/urdf/simple_robot.urdf" />
+
+  <!-- 把机器人放进 Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+    args="-param robot_description -urdf -model my_robot -x 0 -y 0 -z 0.15" />
+
+  <!-- 键盘控制 -->
+  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen"/>
+</launch>
