@@ -1,0 +1,13 @@
+<launch>
+  <!-- 1. 加载机器人URDF模型 -->
+  <param name="robot_description" command="$(find xacro)/xacro $(find ykr_robot_description)/urdf/simple_robot.urdf" />
+
+  <!-- 2. 启动robot_state_publisher，发布TF坐标变换 -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" />
+
+  <!-- 3. 启动joint_state_publisher_gui，提供关节滑动控制（可选，方便调试） -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" output="screen" />
+
+  <!-- 4. 启动RViz，加载机器人模型 -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ykr_robot_description)/launch/display.rviz" required="true" output="screen" />
+</launch>

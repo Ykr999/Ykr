@@ -1,0 +1,2 @@
+my_class_pkg
+-DCATKIN_DEVEL_PREFIX=/home/bcsh/ykr_ros_class_ws/devel -DCMAKE_INSTALL_PREFIX=/home/bcsh/ykr_ros_class_ws/install -G Unix Makefiles
