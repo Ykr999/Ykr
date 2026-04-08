@@ -1,0 +1,10 @@
+cat > .gitignore << EOF
+# Python缓存
+__pycache__/
+*.pyc
+
+# 编辑器临时文件
+.vscode/
+.idea/
+*.swp
+EOF

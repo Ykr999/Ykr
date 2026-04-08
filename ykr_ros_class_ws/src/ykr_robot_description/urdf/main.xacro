@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- 引入参数文件（如果有common_properties.xacro） -->
+  <xacro:include filename="$(find ykr_robot_description)/urdf/common_properties.xacro"/>
+  <!-- 引入底盘模块 -->
+  <xacro:include filename="$(find ykr_robot_description)/urdf/chassis.xacro"/>
+  <!-- 引入轮子模块 -->
+  <xacro:include filename="$(find ykr_robot_description)/urdf/wheels.xacro"/>
+</robot>
