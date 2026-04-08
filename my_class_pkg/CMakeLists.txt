@@ -73,6 +73,7 @@ add_executable(ros_action_client_node src/ros_action_client.cpp)
 add_executable(ros_param_node src/ros_param.cpp)
 add_executable(dynamic_reconfigure_node src/dynamic_reconfigure.cpp)
 add_executable(ros_dynamic_speed_node src/ros_dynamic_speed.cpp)
+add_executable(ros_log src/ros_log.cpp)
 # 链接库
 target_link_libraries(ros_subscriber_node ${catkin_LIBRARIES})
 target_link_libraries(ros_publisher_node ${catkin_LIBRARIES})
@@ -85,7 +86,7 @@ target_link_libraries(ros_action_client_node ${catkin_LIBRARIES})
 target_link_libraries(ros_param_node ${catkin_LIBRARIES})
 target_link_libraries(dynamic_reconfigure_node ${catkin_LIBRARIES})
 target_link_libraries(ros_dynamic_speed_node ${catkin_LIBRARIES})
-
+target_link_libraries(ros_log ${catkin_LIBRARIES})
 # 修正：每个 add_dependencies 单独一行（关键！）
 add_dependencies(ros_publisher_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(ros_subscriber_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
