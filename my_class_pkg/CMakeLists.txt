@@ -96,4 +96,7 @@ add_dependencies(ros_server_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EX
 add_dependencies(ros_client_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(dynamic_reconfigure_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(ros_dynamic_speed_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
+add_executable(ros_sonic_node src/ros_sonic.cpp)
+target_link_libraries(ros_sonic_node ${catkin_LIBRARIES})
+add_executable(ros_bump_node src/ros_bump.cpp)
+target_link_libraries(ros_bump_node ${catkin_LIBRARIES})
