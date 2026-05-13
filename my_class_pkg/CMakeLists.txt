@@ -95,7 +95,8 @@ add_executable(ros_imu_rotate_node src/imu_rotate.cpp)
 add_executable(ros_scan_node src/ros_scan.cpp)
 add_executable(ros_avoid_node src/ros_avoid.cpp)
 add_executable(movebase_client_node src/movebase_client.cpp)
-
+add_executable(tag_voice_node src/tag_voice.cpp)
+add_executable(final_node src/final.cpp)
 # 链接库
 target_link_libraries(ros_publisher_node ${catkin_LIBRARIES})
 target_link_libraries(ros_subscriber_node ${catkin_LIBRARIES})
@@ -117,7 +118,8 @@ target_link_libraries(ros_imu_node ${catkin_LIBRARIES})
 target_link_libraries(ros_scan_node ${catkin_LIBRARIES})
 target_link_libraries(ros_avoid_node ${catkin_LIBRARIES})
 target_link_libraries(movebase_client_node ${catkin_LIBRARIES})
-
+target_link_libraries(tag_voice_node ${catkin_LIBRARIES})
+target_link_libraries(final_node ${catkin_LIBRARIES})
 # 依赖
 add_dependencies(dynamic_reconfigure_node ${PROJECT_NAME}_gencfg)
 
